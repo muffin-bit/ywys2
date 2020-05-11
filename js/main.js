@@ -1,5 +1,7 @@
 "use strict";
 
+// Hazel Chan vs Chen
+
 var OFFSET = 23;
 var NORMAL_WIDTH = 6;
 var SELECT_WIDTH = 8;
@@ -13,7 +15,8 @@ var padding = 40;
 var middlePadding = (padding * 2) + 100;
 var width = $(window).width() - middlePadding - CHART_WIDTH - 30;
 
-var episodes = [1, 2, 3, 5, 6, 8, 10, 11];
+// var episodes = ["2", "4", "6", "7 (live votes)", "9 + 10"];
+var episodes = ["2", "4"];
 var totalData;
 var dFirst;
 
@@ -172,7 +175,12 @@ function displayProfile(d) {
 }
 
 function getImageSource(d) {
-    return "pics/" + d.name.replace(/ /g, "") + ".jpg";
+    var res = d.name.split(" ")
+    if (res.length == 1) {
+      return "pics/" + res[0] + ".jpg"
+    } else {
+      return "pics/" + res[0] + "-" + res[1] + ".jpg"
+    }
 }
 
 function getBackground(d) {
@@ -359,11 +367,11 @@ function parseLine(row) {
     var r = {};
     r.name = row.Name;
     r.company = row.Company;
-    r.letter = row["Re-Evaluation"];
+    r.letter = row["Judges Evaluation 3"];
     r.specialNote = row.note;
     r.ranking = [];
     episodes.forEach(function(episode, i) {
-        var rank = getRank(row["ep" + episode]);
+        var rank = getRank(row["Ranking Ep " + episode]);
         if (rank > 0) {
             var o = {};
             o.episode = episode;
