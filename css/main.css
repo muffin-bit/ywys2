@@ -32,12 +32,44 @@ h1 {
   height: 200px;
   box-sizing: border-box;
   position: relative;
-  top: -25px;
+  /* top: -25px; */
   text-align: center;
-  padding-top: 60px;
-  margin-bottom: 30px; }
+  padding-top: 20px;
+  margin-bottom: 40px; }
   #banner img {
     max-height: 120px; }
+
+  .topnav {
+  padding-top: 10px;
+  padding-left: 40px;
+  text-align: left;;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight 700;
+  text-transform: uppercase;}
+
+  .topnav a + a {
+    margin-left: 40px; }
+
+  .topnav a:link {
+    color: #888;
+    background-color: transparent;
+    text-decoration: none; }
+
+  .topnav a:visited {
+    color: #888;
+    background-color: transparent;
+    text-decoration: none; }
+
+  .topnav a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline; }
+
+  .topnav #current {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline; }
 
 #mainWrapper {
   min-height: 100%;
